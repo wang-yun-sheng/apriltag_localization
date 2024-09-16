@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/hsien/2024_AprilTag_Localization/devel/lib/libapriltag_ros_continuous_detector.pdb"
-  "/home/hsien/2024_AprilTag_Localization/devel/lib/libapriltag_ros_continuous_detector.so"
+  "/home/ncrl/apriltag_localization/devel/lib/libapriltag_ros_continuous_detector.pdb"
+  "/home/ncrl/apriltag_localization/devel/lib/libapriltag_ros_continuous_detector.so"
   "CMakeFiles/apriltag_ros_continuous_detector.dir/src/continuous_detector.cpp.o"
 )
 

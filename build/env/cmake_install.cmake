@@ -1,8 +1,8 @@
-# Install script for directory: /home/hsien/2024_AprilTag_Localization/src/env
+# Install script for directory: /home/ncrl/apriltag_localization/src/env
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/hsien/2024_AprilTag_Localization/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ncrl/apriltag_localization/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/hsien/2024_AprilTag_Localization/build/env/catkin_generated/installspace/AprilTag_Localization.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ncrl/apriltag_localization/build/env/catkin_generated/installspace/apriltag_localization.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/AprilTag_Localization/cmake" TYPE FILE FILES
-    "/home/hsien/2024_AprilTag_Localization/build/env/catkin_generated/installspace/AprilTag_LocalizationConfig.cmake"
-    "/home/hsien/2024_AprilTag_Localization/build/env/catkin_generated/installspace/AprilTag_LocalizationConfig-version.cmake"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_localization/cmake" TYPE FILE FILES
+    "/home/ncrl/apriltag_localization/build/env/catkin_generated/installspace/apriltag_localizationConfig.cmake"
+    "/home/ncrl/apriltag_localization/build/env/catkin_generated/installspace/apriltag_localizationConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/AprilTag_Localization" TYPE FILE FILES "/home/hsien/2024_AprilTag_Localization/src/env/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/apriltag_localization" TYPE FILE FILES "/home/ncrl/apriltag_localization/src/env/package.xml")
 endif()
 

@@ -3,6 +3,6 @@ CATKIN_PACKAGE_PREFIX = ""
 PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
-PROJECT_NAME = "AprilTag_Localization"
-PROJECT_SPACE_DIR = "/home/hsien/2024_AprilTag_Localization/install"
+PROJECT_NAME = "apriltag_localization"
+PROJECT_SPACE_DIR = "/home/ncrl/apriltag_localization/install"
 PROJECT_VERSION = "0.0.0"

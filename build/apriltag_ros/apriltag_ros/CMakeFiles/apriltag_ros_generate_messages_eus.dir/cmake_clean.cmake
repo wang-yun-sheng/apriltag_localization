@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "/home/hsien/2024_AprilTag_Localization/devel/share/roseus/ros/apriltag_ros/manifest.l"
-  "/home/hsien/2024_AprilTag_Localization/devel/share/roseus/ros/apriltag_ros/msg/AprilTagDetection.l"
-  "/home/hsien/2024_AprilTag_Localization/devel/share/roseus/ros/apriltag_ros/msg/AprilTagDetectionArray.l"
-  "/home/hsien/2024_AprilTag_Localization/devel/share/roseus/ros/apriltag_ros/srv/AnalyzeSingleImage.l"
+  "/home/ncrl/apriltag_localization/devel/share/roseus/ros/apriltag_ros/manifest.l"
+  "/home/ncrl/apriltag_localization/devel/share/roseus/ros/apriltag_ros/msg/AprilTagDetection.l"
+  "/home/ncrl/apriltag_localization/devel/share/roseus/ros/apriltag_ros/msg/AprilTagDetectionArray.l"
+  "/home/ncrl/apriltag_localization/devel/share/roseus/ros/apriltag_ros/srv/AnalyzeSingleImage.l"
   "CMakeFiles/apriltag_ros_generate_messages_eus"
 )
 

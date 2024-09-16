@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(AprilTag_Localization)
-
+project(apriltag_localization)
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
 
@@ -119,6 +118,8 @@ include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
 )
+
+
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}

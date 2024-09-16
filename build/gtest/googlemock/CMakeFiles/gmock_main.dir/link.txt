@@ -1,1 +1,1 @@
-/usr/bin/c++ -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libgmock_main.so -o ../lib/libgmock_main.so CMakeFiles/gmock_main.dir/src/gmock_main.cc.o  -Wl,-rpath,/home/hsien/2024_AprilTag_Localization/build/gtest/lib ../lib/libgmock.so ../lib/libgtest.so -lpthread 
+/usr/bin/c++ -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libgmock_main.so -o ../lib/libgmock_main.so CMakeFiles/gmock_main.dir/src/gmock_main.cc.o  -Wl,-rpath,/home/ncrl/apriltag_localization/build/gtest/lib ../lib/libgmock.so ../lib/libgtest.so -lpthread 

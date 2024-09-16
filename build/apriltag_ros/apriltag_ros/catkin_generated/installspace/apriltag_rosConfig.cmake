@@ -67,14 +67,14 @@ set(apriltag_ros_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(apriltag_ros_SOURCE_PREFIX /home/hsien/2024_AprilTag_Localization/src/apriltag_ros/apriltag_ros)
-  set(apriltag_ros_DEVEL_PREFIX /home/hsien/2024_AprilTag_Localization/devel)
+  set(apriltag_ros_SOURCE_PREFIX /home/ncrl/apriltag_localization/src/apriltag_ros/apriltag_ros)
+  set(apriltag_ros_DEVEL_PREFIX /home/ncrl/apriltag_localization/devel)
   set(apriltag_ros_INSTALL_PREFIX "")
   set(apriltag_ros_PREFIX ${apriltag_ros_DEVEL_PREFIX})
 else()
   set(apriltag_ros_SOURCE_PREFIX "")
   set(apriltag_ros_DEVEL_PREFIX "")
-  set(apriltag_ros_INSTALL_PREFIX /home/hsien/2024_AprilTag_Localization/install)
+  set(apriltag_ros_INSTALL_PREFIX /home/ncrl/apriltag_localization/install)
   set(apriltag_ros_PREFIX ${apriltag_ros_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(apriltag_ros_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "include;/usr/include/eigen3;/opt/ros/noetic/include;/opt/ros/noetic/include/apriltag;/usr/include/opencv4 " STREQUAL " ")
+if(NOT "include;/usr/include/eigen3;/usr/local/include;/usr/local/include/apriltag;/usr/include/opencv4 " STREQUAL " ")
   set(apriltag_ros_INCLUDE_DIRS "")
-  set(_include_dirs "include;/usr/include/eigen3;/opt/ros/noetic/include;/opt/ros/noetic/include/apriltag;/usr/include/opencv4")
+  set(_include_dirs "include;/usr/include/eigen3;/usr/local/include;/usr/local/include/apriltag;/usr/include/opencv4")
   if(NOT "https://github.com/AprilRobotics/apriltag_ros/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/AprilRobotics/apriltag_ros/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://www.ros.org/wiki/apriltag_ros " STREQUAL " ")
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/hsien/2024_AprilTag_Localization/install/lib;/home/hsien/2024_AprilTag_Localization/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/ncrl/apriltag_localization/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

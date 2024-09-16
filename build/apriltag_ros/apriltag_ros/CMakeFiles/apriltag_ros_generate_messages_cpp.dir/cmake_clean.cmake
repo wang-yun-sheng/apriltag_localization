@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/hsien/2024_AprilTag_Localization/devel/include/apriltag_ros/AnalyzeSingleImage.h"
-  "/home/hsien/2024_AprilTag_Localization/devel/include/apriltag_ros/AprilTagDetection.h"
-  "/home/hsien/2024_AprilTag_Localization/devel/include/apriltag_ros/AprilTagDetectionArray.h"
+  "/home/ncrl/apriltag_localization/devel/include/apriltag_ros/AnalyzeSingleImage.h"
+  "/home/ncrl/apriltag_localization/devel/include/apriltag_ros/AprilTagDetection.h"
+  "/home/ncrl/apriltag_localization/devel/include/apriltag_ros/AprilTagDetectionArray.h"
   "CMakeFiles/apriltag_ros_generate_messages_cpp"
 )
 

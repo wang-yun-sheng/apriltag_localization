@@ -1,8 +1,8 @@
-# Install script for directory: /home/hsien/2024_AprilTag_Localization/src
+# Install script for directory: /home/ncrl/apriltag_localization/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/hsien/2024_AprilTag_Localization/install")
+  set(CMAKE_INSTALL_PREFIX "/home/ncrl/apriltag_localization/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,90 +49,90 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/hsien/2024_AprilTag_Localization/install/_setup_util.py")
+   "/home/ncrl/apriltag_localization/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/hsien/2024_AprilTag_Localization/install" TYPE PROGRAM FILES "/home/hsien/2024_AprilTag_Localization/build/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/home/ncrl/apriltag_localization/install" TYPE PROGRAM FILES "/home/ncrl/apriltag_localization/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/hsien/2024_AprilTag_Localization/install/env.sh")
+   "/home/ncrl/apriltag_localization/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/hsien/2024_AprilTag_Localization/install" TYPE PROGRAM FILES "/home/hsien/2024_AprilTag_Localization/build/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/home/ncrl/apriltag_localization/install" TYPE PROGRAM FILES "/home/ncrl/apriltag_localization/build/catkin_generated/installspace/env.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/hsien/2024_AprilTag_Localization/install/setup.bash;/home/hsien/2024_AprilTag_Localization/install/local_setup.bash")
+   "/home/ncrl/apriltag_localization/install/setup.bash;/home/ncrl/apriltag_localization/install/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/hsien/2024_AprilTag_Localization/install" TYPE FILE FILES
-    "/home/hsien/2024_AprilTag_Localization/build/catkin_generated/installspace/setup.bash"
-    "/home/hsien/2024_AprilTag_Localization/build/catkin_generated/installspace/local_setup.bash"
+file(INSTALL DESTINATION "/home/ncrl/apriltag_localization/install" TYPE FILE FILES
+    "/home/ncrl/apriltag_localization/build/catkin_generated/installspace/setup.bash"
+    "/home/ncrl/apriltag_localization/build/catkin_generated/installspace/local_setup.bash"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/hsien/2024_AprilTag_Localization/install/setup.sh;/home/hsien/2024_AprilTag_Localization/install/local_setup.sh")
+   "/home/ncrl/apriltag_localization/install/setup.sh;/home/ncrl/apriltag_localization/install/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/hsien/2024_AprilTag_Localization/install" TYPE FILE FILES
-    "/home/hsien/2024_AprilTag_Localization/build/catkin_generated/installspace/setup.sh"
-    "/home/hsien/2024_AprilTag_Localization/build/catkin_generated/installspace/local_setup.sh"
+file(INSTALL DESTINATION "/home/ncrl/apriltag_localization/install" TYPE FILE FILES
+    "/home/ncrl/apriltag_localization/build/catkin_generated/installspace/setup.sh"
+    "/home/ncrl/apriltag_localization/build/catkin_generated/installspace/local_setup.sh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/hsien/2024_AprilTag_Localization/install/setup.zsh;/home/hsien/2024_AprilTag_Localization/install/local_setup.zsh")
+   "/home/ncrl/apriltag_localization/install/setup.zsh;/home/ncrl/apriltag_localization/install/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/hsien/2024_AprilTag_Localization/install" TYPE FILE FILES
-    "/home/hsien/2024_AprilTag_Localization/build/catkin_generated/installspace/setup.zsh"
-    "/home/hsien/2024_AprilTag_Localization/build/catkin_generated/installspace/local_setup.zsh"
+file(INSTALL DESTINATION "/home/ncrl/apriltag_localization/install" TYPE FILE FILES
+    "/home/ncrl/apriltag_localization/build/catkin_generated/installspace/setup.zsh"
+    "/home/ncrl/apriltag_localization/build/catkin_generated/installspace/local_setup.zsh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/hsien/2024_AprilTag_Localization/install/.rosinstall")
+   "/home/ncrl/apriltag_localization/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/hsien/2024_AprilTag_Localization/install" TYPE FILE FILES "/home/hsien/2024_AprilTag_Localization/build/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/home/ncrl/apriltag_localization/install" TYPE FILE FILES "/home/ncrl/apriltag_localization/build/catkin_generated/installspace/.rosinstall")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/hsien/2024_AprilTag_Localization/build/gtest/cmake_install.cmake")
-  include("/home/hsien/2024_AprilTag_Localization/build/env/cmake_install.cmake")
-  include("/home/hsien/2024_AprilTag_Localization/build/apriltag_ros/apriltag_ros/cmake_install.cmake")
+  include("/home/ncrl/apriltag_localization/build/gtest/cmake_install.cmake")
+  include("/home/ncrl/apriltag_localization/build/env/cmake_install.cmake")
+  include("/home/ncrl/apriltag_localization/build/apriltag_ros/apriltag_ros/cmake_install.cmake")
 
 endif()
 
@@ -144,5 +144,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/hsien/2024_AprilTag_Localization/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ncrl/apriltag_localization/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hsien/2024_AprilTag_Localization/src
+CMAKE_SOURCE_DIR = /home/ncrl/apriltag_localization/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hsien/2024_AprilTag_Localization/build
+CMAKE_BINARY_DIR = /home/ncrl/apriltag_localization/build
 
 # Utility rule file for tests.
 
@@ -67,6 +67,6 @@ CMakeFiles/tests.dir/clean:
 .PHONY : CMakeFiles/tests.dir/clean
 
 CMakeFiles/tests.dir/depend:
-	cd /home/hsien/2024_AprilTag_Localization/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hsien/2024_AprilTag_Localization/src /home/hsien/2024_AprilTag_Localization/src /home/hsien/2024_AprilTag_Localization/build /home/hsien/2024_AprilTag_Localization/build /home/hsien/2024_AprilTag_Localization/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ncrl/apriltag_localization/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ncrl/apriltag_localization/src /home/ncrl/apriltag_localization/src /home/ncrl/apriltag_localization/build /home/ncrl/apriltag_localization/build /home/ncrl/apriltag_localization/build/CMakeFiles/tests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tests.dir/depend
 

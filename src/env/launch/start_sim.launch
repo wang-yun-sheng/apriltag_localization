@@ -1,21 +1,27 @@
 <?xml version="1.0"?>
-
 <launch>
 
-	<!-- 設置環境變數 -->
-	<env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find AprilTag_Localization)/models"/>
-	<env name="GAZEBO_RESOURCE_PATH" value="${GAZEBO_RESOURCE_PATH}:$(find AprilTag_Localization)/models"/>
-	
-	<!-- Include the MAVROS node with SITL and Gazebo -->
-	<include file="$(find AprilTag_Localization)/launch/iris_sitl.launch">
-		 <arg name="world" default="$(find AprilTag_Localization)/world/test_map.world"/>
-	</include>
+    <!-- 設置環境變數 -->
+    <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find apriltag_localization)/models"/>
+    <env name="GAZEBO_RESOURCE_PATH" value="${GAZEBO_RESOURCE_PATH}:$(find apriltag_localization)/models"/>
+    
+    <!-- Include the MAVROS node with SITL and Gazebo -->
+    <include file="$(find apriltag_localization)/launch/iris_sitl.launch">
+         <arg name="world" default="$(find apriltag_localization)/world/square.world"/>
+    </include>
 
-	<!-- Include apriltag_node -->
-	<include file="$(find apriltag_ros)/launch/continuous_detection.launch" />
+    <!-- Include apriltag_node -->
+    <include file="$(find apriltag_ros)/launch/continuous_detection.launch" />
 
-	<!-- Our node to control  drone -->
-	<node pkg="AprilTag_Localization" type="setpoint_node.py" name="setpoint_node_py" required="true" output="screen" />
-	<node pkg="AprilTag_Localization" type="tag_detection.py" name="tag_detection_py" required="true" output="screen" />
+    <!-- 控制飛行器的節點 -->
+    <node pkg="apriltag_localization" type="setpoint_node.py" name="setpoint_node" output="screen" />
+    <node pkg="apriltag_localization" type="tag_down_detection.py" name="tag_down_detection" output="screen" /> 
+    <node pkg="apriltag_localization" type="kf_down.py" name="kf_down_node" output="screen" />
+    <node pkg="apriltag_localization" type="down_camera_broadcaster.py" name="down_camera_broadcaster" output="screen" />
+    <node pkg="apriltag_localization" type="odom_to_base_link.py" name="odom_to_base_link" output="screen" />
+
+    <!-- 靜態變換從 map 到 odom -->
+	<node pkg="tf" type="static_transform_publisher" name="map_to_odom" 
+        args="0 0 0 0 0 0 map odom 50" />
 
 </launch>

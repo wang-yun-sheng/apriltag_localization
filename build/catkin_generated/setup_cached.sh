@@ -7,8 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export LD_LIBRARY_PATH='/opt/ros/noetic/lib:/opt/ros/noetic/lib/x86_64-linux-gnu:/usr/local/cuda/lib64:/home/hsien/PX4-Autopilot/build/px4_sitl_default/build_gazebo-classic'
-export PKG_CONFIG_PATH='/opt/ros/noetic/lib/pkgconfig:/opt/ros/noetic/lib/x86_64-linux-gnu/pkgconfig'
-export PWD='/home/hsien/2024_AprilTag_Localization/build'
-export PYTHONPATH='/opt/ros/noetic/lib/python3/dist-packages'
-export ROS_PACKAGE_PATH='/home/hsien/2024_AprilTag_Localization/src:/opt/ros/noetic/share'
+export CMAKE_PREFIX_PATH="/home/ncrl/apriltag_localization/devel:$CMAKE_PREFIX_PATH"
+export PWD='/home/ncrl/apriltag_localization/build'
+export ROSLISP_PACKAGE_DIRECTORIES='/home/ncrl/apriltag_localization/devel/share/common-lisp'
+export ROS_PACKAGE_PATH='/home/ncrl/apriltag_localization/src:/opt/ros/noetic/share'

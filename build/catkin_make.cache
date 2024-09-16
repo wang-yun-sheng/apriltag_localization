@@ -1,2 +1,2 @@
 apriltag_ros/apriltag_ros:env
--DCATKIN_DEVEL_PREFIX=/home/hsien/2024_AprilTag_Localization/devel -DCMAKE_INSTALL_PREFIX=/home/hsien/2024_AprilTag_Localization/install -G Unix Makefiles
+-DCATKIN_DEVEL_PREFIX=/home/ncrl/apriltag_localization/devel -DCMAKE_INSTALL_PREFIX=/home/ncrl/apriltag_localization/install -G Unix Makefiles

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/hsien/2024_AprilTag_Localization/devel/lib/libapriltag_ros_common.pdb"
-  "/home/hsien/2024_AprilTag_Localization/devel/lib/libapriltag_ros_common.so"
+  "/home/ncrl/apriltag_localization/devel/lib/libapriltag_ros_common.pdb"
+  "/home/ncrl/apriltag_localization/devel/lib/libapriltag_ros_common.so"
   "CMakeFiles/apriltag_ros_common.dir/src/common_functions.cpp.o"
 )
 

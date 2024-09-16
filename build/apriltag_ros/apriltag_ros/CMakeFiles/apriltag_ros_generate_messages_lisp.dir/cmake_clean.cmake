@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/hsien/2024_AprilTag_Localization/devel/share/common-lisp/ros/apriltag_ros/msg/AprilTagDetection.lisp"
-  "/home/hsien/2024_AprilTag_Localization/devel/share/common-lisp/ros/apriltag_ros/msg/AprilTagDetectionArray.lisp"
-  "/home/hsien/2024_AprilTag_Localization/devel/share/common-lisp/ros/apriltag_ros/srv/AnalyzeSingleImage.lisp"
+  "/home/ncrl/apriltag_localization/devel/share/common-lisp/ros/apriltag_ros/msg/AprilTagDetection.lisp"
+  "/home/ncrl/apriltag_localization/devel/share/common-lisp/ros/apriltag_ros/msg/AprilTagDetectionArray.lisp"
+  "/home/ncrl/apriltag_localization/devel/share/common-lisp/ros/apriltag_ros/srv/AnalyzeSingleImage.lisp"
   "CMakeFiles/apriltag_ros_generate_messages_lisp"
 )
 

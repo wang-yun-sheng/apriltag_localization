@@ -5,15 +5,15 @@
     <!-- vehicle pose -->
     <arg name="x" default="0"/>
     <arg name="y" default="0"/>
-    <arg name="z" default="1"/>
+    <arg name="z" default="0"/>
     <arg name="R" default="0"/>
     <arg name="P" default="0"/>
     <arg name="Y" default="0"/>
     <!-- vehicle model and world -->
     <arg name="est" default="ekf2"/>
     <arg name="vehicle" default="iris"/>
-    <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/empty.world"/>
-    <arg name="sdf" default="$(find AprilTag_Localization)/models/iris/iris.sdf"/>
+    <arg name="world" default="$(find apriltag_localization)/worlds/empty.world"/>
+    <arg name="sdf" default="$(find apriltag_localization)/models/iris/iris.sdf"/>
 
     <!-- gazebo configs -->
     <arg name="gui" default="true"/>
@@ -27,7 +27,9 @@
     <arg name="config" default="px4_config.yaml" />
     <!-- PX4 configs -->
     <arg name="interactive" default="true"/>
-    
+
+    <plugin name="ros_interface_plugin" filename="librotors_gazebo_ros_interface_plugin.so"/>
+
 
     <!-- PX4 SITL and Gazebo -->
     <include file="$(find px4)/launch/posix_sitl.launch">

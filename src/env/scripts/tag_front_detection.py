@@ -30,35 +30,30 @@ apriltags = [apriltag(1, 1, 0.05),
 
 def tag_detections_callback(msg, pub):
     for detection in msg.detections:
-        # 獲取AprilTag相對於相機的位置（rotation matrix）＆方向（quaternion）
         tag_id = detection.id[0]
-        position = detection.pose.pose.pose.position
-        orientation = detection.pose.pose.pose.orientation
-        
-        rel_pos_b = np.array([position.x, position.y, position.z])
-        q = [orientation.x, orientation.y, orientation.z, orientation.w]
-        R = correct_quaternion_to_rotation_matrix(q)
+    	if tag_id < len(apriltags):
+            position = detection.pose.pose.pose.position
+            orientation = detection.pose.pose.pose.orientation
 
-        # 將相對位置從body frame轉換到世界座標系
-        rel_pos = np.dot(R, rel_pos_b)
+            rel_pos_b = np.array([position.x, position.y, position.z])
+            q = [orientation.x, orientation.y, orientation.z, orientation.w]
+            R = correct_quaternion_to_rotation_matrix(q)
 
-        # 檢查tag_id是否在有效範圍內
-        if tag_id < len(apriltags):
-            tag_pos = np.array([apriltags[tag_id].pose.position.x,
-                                apriltags[tag_id].pose.position.y,
-                                apriltags[tag_id].pose.position.z])
-            
-            # 將相對位置 + AprilTag絕對座標 ＝ 無人機測量位置（世界座標系）
+            rel_pos = np.dot(R, rel_pos_b)
+
+            tag_pos = np.array([
+                apriltags[tag_id].pose.position.x,
+                apriltags[tag_id].pose.position.y,
+                apriltags[tag_id].pose.position.z
+            ])
+
             measurement = tag_pos - rel_pos
-            rospy.loginfo("AprilTag detectirel_poson: ID = %d\n measurement = %s", tag_id, measurement)
 
             measurement_msg = Vector3()
             measurement_msg.x = measurement[0]
             measurement_msg.y = measurement[1]
             measurement_msg.z = measurement[2]
             pub.publish(measurement_msg)
-        else:
-            rospy.logwarn("Detected AprilTag with ID %d is out of range.", tag_id)
 
 def local_position_callback(data, pub):
     local_pos_msg = Vector3()
@@ -68,12 +63,12 @@ def local_position_callback(data, pub):
     pub.publish(local_pos_msg)
 
 def main():
-    rospy.init_node('apriltag_measure_uav')
+    rospy.init_node('apriltag_camera_front_measure_uav')
 
-    measurement_pub = rospy.Publisher('/uav/measurement', Vector3, queue_size=10)
-    local_position_pub = rospy.Publisher('/uav/local_position', Vector3, queue_size=10)
+    measurement_pub = rospy.Publisher('/uav/camera_front_measurement', Vector3, queue_size=10)
+    local_position_pub = rospy.Publisher('/uav/camera_front_local_position', Vector3, queue_size=10)
     rospy.Subscriber('/mavros/local_position/pose', PoseStamped, local_position_callback, local_position_pub)
-    rospy.Subscriber('/camera_down/tag_detections', AprilTagDetectionArray, tag_detections_callback, measurement_pub)
+    rospy.Subscriber('/camera_front/tag_detections', AprilTagDetectionArray, tag_detections_callback, measurement_pub)
 
     rate = rospy.Rate(50)
 

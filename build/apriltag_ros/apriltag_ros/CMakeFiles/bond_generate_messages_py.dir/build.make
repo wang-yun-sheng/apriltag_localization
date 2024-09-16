@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/hsien/2024_AprilTag_Localization/src
+CMAKE_SOURCE_DIR = /home/ncrl/apriltag_localization/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/hsien/2024_AprilTag_Localization/build
+CMAKE_BINARY_DIR = /home/ncrl/apriltag_localization/build
 
 # Utility rule file for bond_generate_messages_py.
 
@@ -63,10 +63,10 @@ apriltag_ros/apriltag_ros/CMakeFiles/bond_generate_messages_py.dir/build: bond_g
 .PHONY : apriltag_ros/apriltag_ros/CMakeFiles/bond_generate_messages_py.dir/build
 
 apriltag_ros/apriltag_ros/CMakeFiles/bond_generate_messages_py.dir/clean:
-	cd /home/hsien/2024_AprilTag_Localization/build/apriltag_ros/apriltag_ros && $(CMAKE_COMMAND) -P CMakeFiles/bond_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/ncrl/apriltag_localization/build/apriltag_ros/apriltag_ros && $(CMAKE_COMMAND) -P CMakeFiles/bond_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : apriltag_ros/apriltag_ros/CMakeFiles/bond_generate_messages_py.dir/clean
 
 apriltag_ros/apriltag_ros/CMakeFiles/bond_generate_messages_py.dir/depend:
-	cd /home/hsien/2024_AprilTag_Localization/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/hsien/2024_AprilTag_Localization/src /home/hsien/2024_AprilTag_Localization/src/apriltag_ros/apriltag_ros /home/hsien/2024_AprilTag_Localization/build /home/hsien/2024_AprilTag_Localization/build/apriltag_ros/apriltag_ros /home/hsien/2024_AprilTag_Localization/build/apriltag_ros/apriltag_ros/CMakeFiles/bond_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ncrl/apriltag_localization/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ncrl/apriltag_localization/src /home/ncrl/apriltag_localization/src/apriltag_ros/apriltag_ros /home/ncrl/apriltag_localization/build /home/ncrl/apriltag_localization/build/apriltag_ros/apriltag_ros /home/ncrl/apriltag_localization/build/apriltag_ros/apriltag_ros/CMakeFiles/bond_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : apriltag_ros/apriltag_ros/CMakeFiles/bond_generate_messages_py.dir/depend
 
