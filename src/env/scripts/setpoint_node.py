@@ -30,10 +30,10 @@ def Waypoint(x, y, z):
 
 waypoints = [
     Waypoint(0, 0, 2),
-    Waypoint(1, 1, 2),
-    Waypoint(-1, 1, 2),
-    Waypoint(1, -1, 2),
-    Waypoint(-1, -1, 2),
+    Waypoint(0, 0, 2),
+    Waypoint(0, 0, 2),
+    Waypoint(0, 0, 2),
+    Waypoint(0, 0, 2),
 ]
 
 if __name__ == "__main__":

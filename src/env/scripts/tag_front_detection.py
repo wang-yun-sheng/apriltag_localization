@@ -21,10 +21,10 @@ def apriltag(x, y, z):
     p.pose.position.z = z
     return p
 
-apriltags = [apriltag(1, 1, 0.05),
-             apriltag(1, -1, 0.05),
-             apriltag(-1, 1, 0.05),
-             apriltag(-1, -1, 0.05),
+apriltags = [apriltag(0, 0, 0.05),
+             apriltag(0, 0, 0.05),
+             apriltag(0, 0, 0.05),
+             apriltag(0, 0, 0.05),
              apriltag(0, 0, 0.05),]
 
 
