@@ -4,6 +4,7 @@ import rospy
 import numpy as np
 from geometry_msgs.msg import PoseStamped, Vector3
 from apriltag_ros.msg import AprilTagDetectionArray
+from nav_msgs.msg import Odometry
 
 # quaternion --> rotation matrix
 def correct_quaternion_to_rotation_matrix(q):
@@ -21,8 +22,9 @@ def apriltag(x, y, z):
     p.pose.position.z = z
     return p
 
-apriltags = [apriltag(0, 0, 0), apriltag(4.5, 0, 2.5)]
- 
+apriltags = [apriltag(0, 0, 0),apriltag(-0.4, 0, 0),apriltag(0.4, 0, 0),apriltag(0, 0.4, 0),apriltag(0, -0.4, 0),apriltag(4.5, 0, 2.5)]
+
+# Callback for tag detections
 # Callback for tag detections
 def tag_detections_callback(msg, pub):
     for detection in msg.detections:
@@ -34,45 +36,53 @@ def tag_detections_callback(msg, pub):
 
         # 檢查是否在有效範圍內
         if tag_id < len(apriltags):
-            position = detection.pose.pose.pose.position
-            orientation = detection.pose.pose.pose.orientation
+            try:
+                # 根據 PoseWithCovariance 的結構提取位置和方向
+                pose_with_covariance = detection.pose.pose
+                position = pose_with_covariance.pose.position  # 修改此行
+                orientation = pose_with_covariance.pose.orientation  # 修改此行
 
-            rel_pos_b = np.array([position.x, position.y, position.z])
-            q = [orientation.x, orientation.y, orientation.z, orientation.w]
-            R = correct_quaternion_to_rotation_matrix(q)
+                rel_pos_b = np.array([position.x, position.y, position.z])
+                q = [orientation.x, orientation.y, orientation.z, orientation.w]
+                R = correct_quaternion_to_rotation_matrix(q)
 
-            rel_pos = np.dot(R, rel_pos_b)
+                rel_pos = np.dot(R, rel_pos_b)
 
-            tag_pos = np.array([
-                apriltags[tag_id].pose.position.x,
-                apriltags[tag_id].pose.position.y,
-                apriltags[tag_id].pose.position.z
-            ])
+                tag_pos = np.array([
+                    apriltags[tag_id].pose.position.x,
+                    apriltags[tag_id].pose.position.y,
+                    apriltags[tag_id].pose.position.z
+                ])
 
-            measurement = tag_pos - rel_pos
+                measurement = tag_pos - rel_pos
 
-            measurement_msg = Vector3()
-            measurement_msg.x = measurement[0]
-            measurement_msg.y = measurement[1]
-            measurement_msg.z = measurement[2]
-            pub.publish(measurement_msg)
+                measurement_msg = Vector3()
+                measurement_msg.x = measurement[0]
+                measurement_msg.y = measurement[1]
+                measurement_msg.z = measurement[2]
+                pub.publish(measurement_msg)
+            except AttributeError as e:
+                rospy.logerr(f"AttributeError: {e}. Pose data structure might be different.")
+            except Exception as e:
+                rospy.logerr(f"Unexpected error: {e}")
+
 
 # Callback for local position
 def local_position_callback(data, pub):
     local_pos_msg = Vector3()
-    local_pos_msg.x = data.pose.position.x
-    local_pos_msg.y = data.pose.position.y
-    local_pos_msg.z = data.pose.position.z
+    local_pos_msg.x = data.pose.pose.position.x  # 從 Odometry 中提取位置
+    local_pos_msg.y = data.pose.pose.position.y
+    local_pos_msg.z = data.pose.pose.position.z
     pub.publish(local_pos_msg)
 
 # Main function
 def main():
-    rospy.init_node('apriltag_camera_measure_uav')
+    rospy.init_node('apriltag_camera_down_measure_uav')
 
     measurement_pub = rospy.Publisher('/uav/camera_down_measurement', Vector3, queue_size=10)
-    local_position_pub = rospy.Publisher('/uav/camera_local_position', Vector3, queue_size=10)
+    local_position_pub = rospy.Publisher('/uav/camera_down_local_position', Vector3, queue_size=10)
 
-    rospy.Subscriber('/mavros/local_position/pose', PoseStamped, local_position_callback, local_position_pub)
+    rospy.Subscriber('/iris/truth_pose', Odometry, local_position_callback, local_position_pub)
     rospy.Subscriber('/camera_down/tag_detections', AprilTagDetectionArray, tag_detections_callback, measurement_pub)
 
     rate = rospy.Rate(50)
