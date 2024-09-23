@@ -24,12 +24,14 @@
     <node pkg="apriltag_localization" type="tag_down_detection.py" name="tag_down_detection" output="screen" /> 
     <node pkg="apriltag_localization" type="tag_down_detection_ekf.py" name="tag_down_detection_ekf" output="screen" /> 
     <node pkg="apriltag_localization" type="kf_down.py" name="kf_down_node" output="screen" />
-    <node pkg="apriltag_localization" type="down_camera_broadcaster.py" name="down_camera_broadcaster" output="screen" />
-    <node pkg="apriltag_localization" type="odom_to_base_link.py" name="odom_to_base_link" output="screen" />
+    <!--node pkg="apriltag_localization" type="down_camera_broadcaster.py" name="down_camera_broadcaster" output="screen" /--> 
+    <!--node pkg="apriltag_localization" type="odom_to_base_link.py" name="odom_to_base_link" output="screen" /-->
 
 
     <!-- 靜態變換從 map 到 odom -->
 	<node pkg="tf" type="static_transform_publisher" name="map_to_odom" 
         args="0 0 0 0 0 0 map odom 50" />
-
+    
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_down_camera_link" 
+        args="0 0 -0.03 0 0 0 base_link down_camera_link 50" />
 </launch>

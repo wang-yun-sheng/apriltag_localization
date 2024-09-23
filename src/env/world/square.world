@@ -25,13 +25,37 @@
     <include>
       <uri>model://ApriltagID0</uri>
       <pose>0 0 0 0 1.57 0</pose>
-      <name>ground_tag</name>
+      <name>ground_tag0</name>
     </include>
 
     <include>
       <uri>model://ApriltagID1</uri>
+      <pose>-1.5 0 0 0 1.57 0</pose>
+      <name>ground_tag1</name>
+    </include>
+
+    <include>
+      <uri>model://ApriltagID2</uri>
+      <pose>1.5 0 0 0 1.57 0</pose>
+      <name>ground_tag2</name>
+    </include>
+
+    <include>
+      <uri>model://ApriltagID3</uri>
+      <pose>0 1.5 0 0 1.57 0</pose>
+      <name>ground_tag3</name>
+    </include>
+
+    <include>
+      <uri>model://ApriltagID4</uri>
+      <pose>0 -1.5 0 0 1.57 0</pose>
+      <name>ground_tag4</name>
+    </include>
+
+    <include>
+      <uri>model://ApriltagID5</uri>
       <pose>4.5 0 2.5 0 0 0</pose>
-      <name>pillar_tag</name>
+      <name>pillar_tag5</name>
     </include>
 
 

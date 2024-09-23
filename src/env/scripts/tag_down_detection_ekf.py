@@ -22,11 +22,10 @@ def apriltag(x, y, z):
     p.pose.position.z = z
     return p
 
-apriltags = [apriltag(0, 0, 0), apriltag(-0.4, 0, 0), apriltag(0.4, 0, 0), apriltag(0, 0.4, 0), apriltag(0, -0.4, 0), apriltag(4.5, 0, 2.5)]
+apriltags = [apriltag(0, 0, 0), apriltag(-1.5, 0, 0), apriltag(1.5, 0, 0), apriltag(0, 1.5, 0), apriltag(0, -1.5, 0), apriltag(4.5, 0, 2.5)]
 
 def tag_detections_callback(msg, pub):
     for detection in msg.detections:
-        rospy.loginfo(f"Detection: {detection}")
         if isinstance(detection.id, (list, tuple)) and len(detection.id) > 0:
             tag_id = detection.id[0]
         else:
@@ -35,7 +34,6 @@ def tag_detections_callback(msg, pub):
         if tag_id < len(apriltags):
             try:
                 # 使用正確的屬性路徑訪問數據
-                rospy.loginfo(f"Pose: {detection.pose}")
                 pose_with_covariance = detection.pose
 
                 # 確認 pose_with_covariance 的結構
@@ -59,16 +57,11 @@ def tag_detections_callback(msg, pub):
 
                     measurement_msg = PoseWithCovarianceStamped()
                     measurement_msg.header.stamp = rospy.Time.now()
-                    measurement_msg.header.frame_id = "map"
+                    measurement_msg.header.frame_id = "odom"
                     measurement_msg.pose.pose.position.x = measurement[0]
                     measurement_msg.pose.pose.position.y = measurement[1]
                     measurement_msg.pose.pose.position.z = measurement[2]
-                    measurement_msg.pose.covariance = [0.1, 0, 0, 0, 0, 0,
-                                                       0, 0.1, 0, 0, 0, 0,
-                                                       0, 0, 0.1, 0, 0, 0,
-                                                       0, 0, 0, 0.1, 0, 0,
-                                                       0, 0, 0, 0, 0.1, 0,
-                                                       0, 0, 0, 0, 0, 0.1]
+
 
                     pub.publish(measurement_msg)
                 else:
@@ -99,7 +92,7 @@ def main():
     measurement_pub = rospy.Publisher('/uav/camera_down_measurement_ekf', PoseWithCovarianceStamped, queue_size=10)
     local_position_pub = rospy.Publisher('/uav/camera_down_local_position_ekf', Vector3, queue_size=10)
 
-    rospy.Subscriber('/iris/truth_pose', Odometry, local_position_callback, local_position_pub)
+    rospy.Subscriber('/mavros/local_position/odom', Odometry, local_position_callback, local_position_pub)
     rospy.Subscriber('/camera_down/tag_detections', AprilTagDetectionArray, tag_detections_callback, measurement_pub)
 
     rate = rospy.Rate(50)
