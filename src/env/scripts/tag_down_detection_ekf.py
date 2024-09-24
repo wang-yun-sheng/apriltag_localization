@@ -61,7 +61,7 @@ def tag_detections_callback(msg, pub):
                     measurement_msg.pose.pose.position.x = measurement[0]
                     measurement_msg.pose.pose.position.y = measurement[1]
                     measurement_msg.pose.pose.position.z = measurement[2]
-
+                    measurement_msg.pose.covariance = [0.01] * 36
 
                     pub.publish(measurement_msg)
                 else:

@@ -1,5 +1,5 @@
 # ekf_localization.yaml
-frequency: 50
+frequency: 100
 sensor_timeout: 0.1
 two_d_mode: false
 publish_acceleration: true
@@ -31,7 +31,8 @@ pose0_relative: false
 pose0_queue_size: 10
 pose0_rejection_threshold: 2
 pose0_nodelay: true
-pose0_covariance_diagonal: [0.01, 0.01, 1e-9, 0.01, 0.01, 0.01]  #[x, y, z, roll, pitch, yaw]
+pose0_covariance_diagonal: [0.01, 0.01, 0.00001, 0.01, 0.01, 0.01]  #[x, y, z, roll, pitch, yaw]
+
 
 
 odom0: /mavros/local_position/odom
@@ -51,6 +52,7 @@ odom0_nodelay: true
 odom0_differential: false
 odom0_relative: false
 odom0_covariance_diagonal: [1, 1, 10, 1, 1, 1, 1, 1, 1, 1, 1, 1] #[x, y, z, roll, pitch, yaw, vx, vy, vz, p, q, r]
+ #[x, y, z, roll, pitch, yaw, vx, vy, vz, p, q, r]
 
 
 imu0: /mavros/imu/data
@@ -69,7 +71,7 @@ imu0_differential: false
 imu0_relative: true
 imu0_queue_size: 10
 imu0_remove_gravitational_acceleration: true
-imu0_covariance_diagonal: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]  
+#imu0_covariance_diagonal: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1]  
 
 
 

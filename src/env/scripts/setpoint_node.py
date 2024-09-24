@@ -96,16 +96,16 @@ if __name__ == "__main__":
         # Check if UAV has reached the current waypoint
         if distance(current_pose.pose.position, waypoints[waypoint_index].pose.position) < 0.1:
             # Check if the z-axis distance is small enough
-            if abs(current_pose.pose.position.z - waypoints[waypoint_index].pose.position.z) < 0.2:
+            if abs(current_pose.pose.position.z - waypoints[waypoint_index].pose.position.z) < 0.25:
                 waypoint_index += 1
                 if waypoint_index >= len(waypoints):
                     waypoint_index = 0
             else:
                 # Adjust the z position to gradually reach the target waypoint height
                 if current_pose.pose.position.z < waypoints[waypoint_index].pose.position.z:
-                    pose.pose.position.z += 0.5  # Ascend gradually, you can adjust the step size (0.5)
+                    pose.pose.position.z += 0.8  # Ascend gradually, you can adjust the step size (0.5)
                 elif current_pose.pose.position.z > waypoints[waypoint_index].pose.position.z:
-                    pose.pose.position.z -= 0.5  # Descend gradually
+                    pose.pose.position.z -= 0.8 # Descend gradually
 
 
      

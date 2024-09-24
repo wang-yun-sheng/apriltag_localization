@@ -16,22 +16,31 @@
     <node pkg="robot_localization" type="ekf_localization_node" name="ekf_localization" clear_params="true">
         <rosparam command="load" file="$(find apriltag_localization)/config/ekf_localization.yaml" />
     </node>
- 
+    
+      <!-- 設定參數 -->
+    <param name="negate_measured_roll" value="1" />
+    <param name="negate_measured_pitch" value="1" />
+    <param name="negate_measured_yaw" value="1" />
+    <param name="debounce_s" value="4.0" />
+    <param name="err_threshold_deg" value="10.0" />
 
 
     <!-- 控制飛行器的節點 -->
     <node pkg="apriltag_localization" type="setpoint_node.py" name="setpoint_node" output="screen" />
-    <node pkg="apriltag_localization" type="tag_down_detection.py" name="tag_down_detection" output="screen" /> 
+    <!--node pkg="apriltag_localization" type="tag_down_detection.py" name="tag_down_detection" output="screen" /--> 
     <node pkg="apriltag_localization" type="tag_down_detection_ekf.py" name="tag_down_detection_ekf" output="screen" /> 
-    <node pkg="apriltag_localization" type="kf_down.py" name="kf_down_node" output="screen" />
+    <!--node pkg="apriltag_localization" type="kf_down.py" name="kf_down_node" output="screen" /-->
     <!--node pkg="apriltag_localization" type="down_camera_broadcaster.py" name="down_camera_broadcaster" output="screen" /--> 
     <!--node pkg="apriltag_localization" type="odom_to_base_link.py" name="odom_to_base_link" output="screen" /-->
-
-
-    <!-- 靜態變換從 map 到 odom -->
-	<node pkg="tf" type="static_transform_publisher" name="map_to_odom" 
-        args="0 0 0 0 0 0 map odom 50" />
     
+
+
+
+
+    <node pkg="tf" type="static_transform_publisher" name="map_to_odom" 
+        args="0 0 0 0 0 0 map odom 20" />
+        
     <node pkg="tf" type="static_transform_publisher" name="base_link_to_down_camera_link" 
-        args="0 0 -0.03 0 0 0 base_link down_camera_link 50" />
+        args="0 0 -0.03 0 0 0 base_link down_camera_link 10" />
+
 </launch>
