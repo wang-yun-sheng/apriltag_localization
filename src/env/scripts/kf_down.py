@@ -81,8 +81,8 @@ if __name__ == "__main__":
                   [0, 0, dt]])  # 控制輸入矩陣
 
     H = np.eye(6)[:3, :]  # 測量矩陣 (只測量位置)
-    Q = np.eye(6) * 0.1  # 預測噪音
-    R = np.eye(3) *0.1  # 測量噪音 
+    Q = np.eye(6) * 10000  # 預測噪音
+    R = np.eye(3) *0.0000001  # 測量噪音 
     P = np.eye(6) * 0.1  # 初始協方差矩陣
     X = np.zeros(6)  # 初始狀態 [位置x, 位置y, 位置z, 速度x, 速度y, 速度z]
     imu_acceleration = None  # IMU 加速度初始化
