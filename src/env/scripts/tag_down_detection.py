@@ -22,7 +22,7 @@ def apriltag(x, y, z):
     return p
 
 
-apriltags = [apriltag(0, 0, 0),apriltag(-0.4, 0, 0),apriltag(0.4, 0, 0),apriltag(0, 0.4, 0),apriltag(0, -0.4, 0),apriltag(4.5, 0, 2.5)]
+apriltags = [apriltag(0, 0, 0),apriltag(-1.5, 0, 0),apriltag(1.5, 0, 0),apriltag(0, 1.5, 0),apriltag(0, -1.5, 0)]
 
 
 def tag_detections_callback(msg, pub):
@@ -41,22 +41,20 @@ def tag_detections_callback(msg, pub):
 
         # 檢查tag_id是否在有效範圍內
         if tag_id < len(apriltags):
-            tag_pos = np.array([apriltags[tag_id].pose.position.x,
+           tag_pos = np.array([apriltags[tag_id].pose.position.x,
                                 apriltags[tag_id].pose.position.y,
                                 apriltags[tag_id].pose.position.z])
             
             # 將相對位置 + AprilTag絕對座標 ＝ 無人機測量位置（世界座標系）
-            measurement = tag_pos - rel_pos
-            rospy.loginfo("AprilTag detectirel_poson: ID = %d\n measurement = %s", tag_id, measurement)
+        measurement = tag_pos - rel_pos
 
-            measurement_msg = Vector3()
-            measurement_msg.x = measurement[0]
-            measurement_msg.y = measurement[1]
-            measurement_msg.z = measurement[2]
-            pub.publish(measurement_msg)
-        else:
-            rospy.logwarn("Detected AprilTag with ID %d is out of range.", tag_id)
-
+        measurement_msg = Vector3()
+        measurement_msg.x = measurement[0]
+        measurement_msg.y = measurement[1]
+        measurement_msg.z = measurement[2]
+        pub.publish(measurement_msg)
+        
+    
 def local_position_callback(data, pub):
     local_pos_msg = Vector3()
     local_pos_msg.x = data.pose.position.x
@@ -74,7 +72,7 @@ def main():
     rospy.Subscriber('/mavros/local_position/pose', PoseStamped, local_position_callback, local_position_pub)
     rospy.Subscriber('/camera_down/tag_detections', AprilTagDetectionArray, tag_detections_callback, measurement_pub)
 
-    rate = rospy.Rate(50)
+    rate = rospy.Rate(100)
 
     while not rospy.is_shutdown():
         rate.sleep()

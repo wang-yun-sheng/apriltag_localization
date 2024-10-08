@@ -53,11 +53,11 @@
       <name>ground_tag4</name>
     </include>
 
-    <include>
+    <!--include>
       <uri>model://ApriltagID5</uri>
       <pose>4.5 0 2.5 0 0 0</pose>
       <name>pillar_tag5</name>
-    </include>
+    </include-->
 
 
     <!-- Walls -->

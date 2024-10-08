@@ -31,14 +31,11 @@ def Waypoint(x, y, z):
     return set_point
 
 waypoints = [
-    Waypoint(0, 0, 1),
-    Waypoint(-1.5, 0, 2),
-    Waypoint(1.5, 0, 3),
-    Waypoint(0, 1.5, 2),
-    Waypoint(0, -1.5, 1),
-    Waypoint(0, 0, 1),
-
-
+    Waypoint(0, 0, 2.0),
+    Waypoint(-1.5, 0, 2.0),
+    Waypoint(1.5, 0, 2.0),
+    Waypoint(0, 1.5, 2.0),
+    Waypoint(0, -1.5, 2.0),
 ]
 
 if __name__ == "__main__":
